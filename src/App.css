@@ -1,33 +1,201 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 .App {
-  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 18px;
+  overflow: scroll;
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-weight: inherit;
+  font-size: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+
+button {
+  background-color: rgba(255, 0, 0, 0);
+  border: 1px rgba(40, 40, 40, 0.86);
+  font-size: inherit;
+  font-family: inherit;
+
+}
+
+button:active {
+  color: blue;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+
+
+.container {
+  display: inline-block;
+
+
+}
+
+.left {
+  max-width: 500px;
+  min-width: 200px;
+  width: 50%;
+  padding: 60px 20px 60px 60px;
+  display: inline-block;
+
+
+
+}
+
+input[type="text"] {
+  font-size:20px;
+  font-family: inherit;
+
+
+}
+
+.todo-input-form {
+  border: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1; /* Firefox */
+
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: black;
+}
+
+
+.todo-item {
+  padding: 0;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.not-done {
+  text-decoration: none;
+}
+
+
+
+
+
+.middle {
+  max-width: 300px;
+  position: -webkit-sticky; /* Safari */
+  position: absolute;
+
+  top: 50px;
+  width: 25%;
+  padding: 60px 40px;
+  align-content: flex-start;
+}
+
+
+
+.timer {
+  font-size: 80px;
+  display: inline-block;
+  padding-top: 20px;
+
+}
+
+.cycle{
+  font-size: 20px;
+  opacity: 0.5;
+  display: inline-block;
+  padding-top: 20px;
+  margin: 20px;
+
+}
+
+
+.timer-controller-buttons {
+  display: inline-block;
+  align-items: center;
+
+
+}
+
+
+.sound {
+  width: 20px;
+  display: inline-block;
+  margin: 0 auto;
+
+}
+
+.stop {
+  font-size: 50px;
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+  top: 6px;
+
+
+}
+
+.play{
+  font-size: 22px;
+  display: inline-block;
+  margin: 0 auto;
+  width: 40px;
+}
+
+.pause {
+  font-size: 28px;
+  display: inline-block;
+  margin: 0 auto;
+  width: 40px;
+}
+
+
+
+.right {
+  width: 25%;
+  padding-top: 60px;
+  display: inline-block;
+}
+
+
+
+li {
+  display: inline-block;
+  padding: 0;
+  margin: auto;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+button.delete-todo {
+  opacity: 0.3;
 }
+
+button.delete-todo:hover {
+  opacity: 1;
+}
+
