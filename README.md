@@ -1,2 +1,2 @@
-First change
+Simple todo app for excersize.
 
