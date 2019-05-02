@@ -54,49 +54,50 @@ class Timer extends React.Component {
         const newTimerState = !this.state.timerOn;
         this.setState({ timerOn: newTimerState});
 
+        if (this.state.timerOn) {
 
-        let time;
-        if (this.state.cycle === 'work') {
-            return time = this.state.worktime * 60;
-        } else if (this.state.cycle === 'break') {
-            return time = this.state.breaktime * 60;
-        } else {console.log('ERROR: cycle not written in the state.')}
-
-
-        let minutes, seconds;
-        let runningTimer = setInterval(() => {
-            this.setState({
-                timerId: runningTimer
-            })
-        });
-        minutes = Math.floor(time/60);
-        seconds = time - minutes * 60;
-
-        minutes = minutes < 10? "0" + minutes : minutes;
-        seconds = seconds < 10? "0" + seconds : seconds;
-
-        this.setState({
-            currentTime: `${minutes} : ${seconds}`
-        });
-
-        // time ended?
-        ///
-
-        if (time === 0) {
+            let time;
             if (this.state.cycle === 'work') {
+                return time = this.state.worktime * 60;
+            } else if (this.state.cycle === 'break') {
+                return time = this.state.breaktime * 60;
+            } else {console.log('ERROR: cycle not written in the state.')}
+
+
+            let minutes, seconds;
+            let runningTimer = setInterval(() => {
                 this.setState({
-                    cycle: 'break',
-                    timerOn: false
-                });
-                clearInterval(this.state.timerId);
-                this.handlePlayPause(this.state.breakTime);
-            } else {
-                this.setState({
-                    cycle: 'work',
-                    timerOn: false
-                });
-                clearInterval(this.state.timerId);
-                this.handlePlayPause(this.state.worktime);
+                    timerId: runningTimer
+                })
+            });
+            minutes = Math.floor(time/60);
+            seconds = time - minutes * 60;
+
+            minutes = minutes < 10? "0" + minutes : minutes;
+            seconds = seconds < 10? "0" + seconds : seconds;
+
+            this.setState({
+                currentTime: `${minutes} : ${seconds}`
+            });
+
+            // time ended?
+
+            if (time === 0) {
+                if (this.state.cycle === 'work') {
+                    this.setState({
+                        cycle: 'break',
+                        timerOn: false
+                    });
+                    clearInterval(this.state.timerId);
+                    this.handlePlayPause(this.state.breakTime);
+                } else {
+                    this.setState({
+                        cycle: 'work',
+                        timerOn: false
+                    });
+                    clearInterval(this.state.timerId);
+                    this.handlePlayPause(this.state.worktime);
+                }
             }
         }
 
